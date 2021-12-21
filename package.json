@@ -1,11 +1,20 @@
 {
   "name": "sr-vue-lib",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.7-test",
+  "private": false,
+  "main": "lib/index.umd.min.js",
+  "author": {
+    "name": "luoyan"
+  },
+  "publishConfig": {
+    "registry": "https://repo.log56.com/nexus3/repository/npm-test-hosted/"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name index --dest lib packages/index.js",
+    "pack": "npm run lib && npm pack"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -18,6 +27,8 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
